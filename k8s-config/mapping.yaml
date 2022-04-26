@@ -1,0 +1,9 @@
+---
+apiVersion: getambassador.io/v3alpha1
+kind:  Mapping
+metadata:
+  name:   web-java-docker-mapping
+spec:
+  host: "*"
+  prefix: /
+  service:  web-java-docker.default:8080

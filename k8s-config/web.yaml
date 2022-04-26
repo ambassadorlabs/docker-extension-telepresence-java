@@ -1,0 +1,37 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: web-java-docker
+spec:
+  selector:
+    app: web-java-docker
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-java-docker
+  labels:
+    app: web-java-docker
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: web-java-docker
+  template:
+    metadata:
+      name: web-java-docker
+      labels:
+        app: web-java-docker
+    spec:
+      containers:
+      - name: web-java-docker
+        image: danielbryantuk/web-java-docker
+        imagePullPolicy: Always
+        ports:
+          - containerPort: 8080

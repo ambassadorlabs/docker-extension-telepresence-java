@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Spring Boot Thymeleaf Hello World Example</title>
+
+    <link rel="stylesheet" th:href="@{webjars/bootstrap/4.2.1/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" th:href="@{/css/main.css}"/>
+
+</head>
+
+<body>
+<h1Hello</h1>
+<table>
+    <tr th:each="userEmoji : ${userEmojis}">
+        <td th:text="${userEmoji.username}"></td>
+        <td th:utext="${userEmoji.emojiChars}"></td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,36 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: emoji-java-docker
+spec:
+  selector:
+    app: emoji-java-docker
+  ports:
+    - protocol: TCP
+      port: 8082
+      targetPort: 8082
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: emoji-java-docker
+  labels:
+    app: emoji-java-docker
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: emoji-java-docker
+  template:
+    metadata:
+      name: emoji-java-docker
+      labels:
+        app: emoji-java-docker
+    spec:
+      containers:
+      - name: emoji-java-docker
+        image: danielbryantuk/emoji-java-docker
+        ports:
+          - containerPort: 8082
