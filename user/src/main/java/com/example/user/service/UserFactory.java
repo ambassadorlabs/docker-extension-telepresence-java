@@ -19,12 +19,12 @@ public class UserFactory {
     );
 
     public List<UserDTO> getAllUsers() {
-        List<UserDTO> updatedUsers = new ArrayList<>();
-        for (UserDTO user : USERS) {
-            updatedUsers.add(new UserDTO(user.getUserId(), user.getUsername(), "whale"));
-        }
-        return updatedUsers;
+//        List<UserDTO> updatedUsers = new ArrayList<>();
+//        for (UserDTO user : USERS) {
+//            updatedUsers.add(new UserDTO(user.getUserId(), user.getUsername(), "whale"));
+//        }
+//       return updatedUsers;
 
-//        return USERS;
+        return USERS;
     }
 }
