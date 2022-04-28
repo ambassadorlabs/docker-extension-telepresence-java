@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha tests/**/*Test.js --reporter spec"
+    "test": "mocha tests/**/*Tests.js --reporter spec"
   },
   "author": "Ambassador Labs",
   "license": "Apache-2.0",

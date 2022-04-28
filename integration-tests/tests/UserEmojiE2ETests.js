@@ -2,7 +2,7 @@ var expect  = require("chai").expect;
 var request = require("request");
 
 const options = {
-  url : "<ADD APPLICATION INGRESS URL HERE>",
+  url : "https://<ADD APPLICATION INGRESS URL HERE>/api",
   headers : {'x-telepresence-intercept-id': '<ADD TELEPRESENCE HEADER HERE>'}
 }
 
